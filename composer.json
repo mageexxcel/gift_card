@@ -1,0 +1,25 @@
+{
+    "name": "excellence/module-giftcard",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "manish@excellencetechnologies.in",
+            "name": "xMageStore"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "excellence/module-storecredit": "1.0.*",
+        "excellence/module-base": "1.0.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Excellence\\GiftCard\\": ""
+        }
+    }
+}

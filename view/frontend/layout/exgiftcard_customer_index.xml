@@ -1,0 +1,17 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+<update handle="customer_account"/>
+<!-- <head>
+    <css src="Excellence_GiftCard::css/credit.css"/>
+</head> -->
+<body>
+    <referenceBlock  name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Gift Cards</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+        <block ifconfig="excellence_giftcard/excellence_giftcard_setting/enable_control" class="Excellence\GiftCard\Block\Main" name="my_giftcard" template="Excellence_GiftCard::giftcard/customform.phtml">
+        </block>
+    </referenceContainer>
+</body>
+</page>

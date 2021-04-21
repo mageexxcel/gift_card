@@ -1,0 +1,12 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer_account_navigation">
+            <block ifconfig="excellence_giftcard/excellence_giftcard_setting/enable_control" class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-giftcard">
+                <arguments>
+                    <argument name="path" xsi:type="string">exgiftcard/customer/index</argument>
+                    <argument name="label" xsi:type="string">Gift Cards</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
