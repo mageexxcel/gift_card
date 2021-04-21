@@ -1,0 +1,57 @@
+<!--@subject {{trans "Gift Card Inside"}} @-->
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+ul{list-style:none;}
+.details-section { width:200px, font-family: arial, sans-serif;  border-collapse: collapse;  margin-top: 30px;}
+td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+tr:nth-child(even) { background-color: #dddddd; }
+.post-id{width:2%} .post-name{width:30%}
+@-->
+{{template config_path="design/email/header_template"}}
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+        <td>
+            <p>
+                {{trans "Hi, <strong>%receiverName</strong>" receiverName=$customerName |raw}}
+            </p>
+            <p>
+                {{trans "Your friend <strong>%senderName</strong>" senderName=$senderName |raw}}
+            </p>
+            <p>
+                {{trans "send you a gift card worth value of <strong>%couponValue</strong>" couponValue=$couponValue |raw}}
+            </p>
+            <p>
+                {{trans "So, What Are are you Waiting for? "}}
+            </p>
+            <p>
+                {{trans "Just Go To Our <a href="%account_url">Shop</a>." account_url=$this.getUrl($store) |rawShop}} {{trans "and Use It. Best Deals Are waiting for You. "}}
+            </p>
+            <p>
+                {{if optionalMessage}}
+                    <ul>
+                        <li>
+                            {{trans "%senderName" senderName=$senderName |raw}}
+                            {{trans "'s thought : <strong>%optionalMessage</strong>" optionalMessage=$optionalMessage |raw}}
+
+                        </li>
+                    </ul>
+                    {{else}}
+
+                    {{/if}}
+            </p>
+            <hr/>
+            <p>
+                {{trans "These are the details of gift card"}}
+            </p>
+            <p>
+                {{trans "Coupon Worth Value : <strong>%couponValue</strong>" couponValue=$couponValue |raw}}
+                <br/>
+                {{trans "Coupon Code : <strong>%couponCode</strong>" couponCode=$couponCode |raw}}
+            </p>
+            <hr/>
+            <small>{{trans '<a href="%account_url">Here</a>.' account_url=$this.getUrl($store,'gift-card-redeem',[_nosid:1]) |raw}}</small>
+            {{trans " you find the step to redeem this gift card."}}
+        </td>
+    </tr>
+</table>
+{{template config_path="design/email/footer_template"}}
